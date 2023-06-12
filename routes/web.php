@@ -17,7 +17,12 @@ Route::get('/',[\App\Http\Controllers\HomeController::class,'getAllArticles'])->
 
 Route::prefix("/articles")->group(function (){
     Route::get('/create',[\App\Http\Controllers\ArticleController::class,'create'])->name('article.create');
+    Route::post('/store',[\App\Http\Controllers\ArticleController::class,'store'])->name('article.store');
+
     Route::get('/edit/{ma_bviet}',[\App\Http\Controllers\ArticleController::class,'edit'])->name('article.edit');
+    Route::put('/update/{ma_bviet}',[\App\Http\Controllers\ArticleController::class,'update'])->name('article.update');
+
+    Route::delete("/delete/{ma_bviet}", [\App\Http\Controllers\ArticleController::class, "delete"])->name('article.delete');
 });
 
 

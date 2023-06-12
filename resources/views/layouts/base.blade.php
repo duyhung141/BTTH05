@@ -19,5 +19,15 @@
 @show
 
 <script src="{{asset('js/bootstrap.js')}}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var closeButton = document.querySelector('.btn-close');
+        var toast = document.querySelector('.toast');
+
+        closeButton.addEventListener('click', function () {
+            toast.classList.add('d-none');
+        });
+    });
+</script>
 </body>
 </html>
